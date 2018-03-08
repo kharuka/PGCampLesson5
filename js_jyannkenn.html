@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/rand.js"></script>
+
+  <!-- jQuery読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/omikuji.js"></script>
+</head>
+
+<body>
+
+<h1>ジャンケンアプリ</h1>
+
+<!-- button -->
+<h2>あなた</h2>
+<button id="btn1">ぐー</button>
+<button id="btn2">ちょき</button>
+<button id="btn3">ぱー</button>
+
+<!-- cp -->
+<h2>あいて</h2>
+<div id="cp">？？？</div>
+
+<!-- result -->
+<h2>結果</h2>
+<div id="result">？？？</div>
+
+<script>
+
+  var btn1=document.querySelector('#btn1');
+  var btn2=document.querySelector('#btn2');
+  var btn3=document.querySelector('#btn3');
+
+  btn1.onclick=function(e){
+    var r=rand(3);
+    console.log(r);
+    if(r==1){
+      cp.innerHTML="ぐー";
+      result.innerHTML="引き分け";
+    }else if (r==2) {
+      cp.innerHTML="ちょき";
+      result.innerHTML="勝ち";
+    }else{
+      cp.innerHTML="ぱー";
+      result.innerHTML="負け";
+    }
+  };
+
+  btn2.onclick=function(e){
+    var r=rand(3);
+    console.log(r);
+    if(r==1){
+      cp.innerHTML="ぐー";
+      result.innerHTML="負け";
+    }else if (r==2) {
+      cp.innerHTML="ちょき";
+      result.innerHTML="引き分け";
+    }else{
+      cp.innerHTML="ぱー";
+      result.innerHTML="勝ち";
+    }
+  };
+
+  btn3.onclick=function(e){
+    var r=rand(3);
+    console.log(r);
+    if(r==1){
+      cp.innerHTML="ぐー";
+      result.innerHTML="勝ち";
+    }else if (r==2) {
+      cp.innerHTML="ちょき";
+      result.innerHTML="負け";
+    }else{
+      cp.innerHTML="ぱー";
+      result.innerHTML="引き分け";
+    }
+  };
+</script>
+
+</body>
+</html>

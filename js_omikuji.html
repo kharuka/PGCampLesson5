@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="js/rand.js"></script>
+
+  <!-- jQuery読み込み -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <script src="js/omikuji.js"></script>
+</head>
+
+<body>
+
+<h1>おみくじアプリ</h1>
+
+<!-- button -->
+<button id="btn">おみくじを引く</button>
+
+<!-- result -->
+<div id="result">？？？</div>
+
+<script>
+
+  var btn=document.querySelector('#btn');
+  var result=document.querySelector('#result');
+
+  btn.onclick=function(e){
+    var r=rand(5);
+    console.log(r);
+    if(r==1){
+      result.innerHTML="大吉";
+    }else if (r==2) {
+      result.innerHTML="中吉";
+    }else if (r==3) {
+      result.innerHTML="小吉";
+    }else if(r==4){
+      result.innerHTML="吉";
+    }else{
+      result.innerHTML="凶";
+    }
+  };
+
+</script>
+
+</body>
+</html>

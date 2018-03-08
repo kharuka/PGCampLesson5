@@ -9,34 +9,27 @@
 
   <!-- jQuery読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="js/rand.js"></script>
-  <script>
-    // var r=rand(10);
-    // alert(r);
-    // $("#rand").html(r);
 
-    // window.onload=function onload(){
-    //   target=document.getElementById("rand");
-    //   target.innerHTML=r;
-    // }
-  </script>
 </head>
 
 <body>
-
-<h1>title</h1>
+<!-- <div from="container"></div> -->
+<h1>fuga hoge foo</h1>
 <p>start</p>
 
-<div id="rand"></div>
+<div id="mybutton" title="abc">123</div>
 
 <p>end</p>
 
-
-
 <script>
-  var r=rand(10);
-  target=document.getElementById("rand");
-  target.innerHTML=r;
+
+  var h1 = document.querySelector("h1");
+  // console.log(h1);
+  h1.style.color="red";
+  h1.style.fontSize="64px";
+  h1.style.backgroundColor="#000000";
+  h1.innerHTML="";
+
 </script>
 
 </body>
