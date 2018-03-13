@@ -1,63 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>電卓アプリ</title>
-</head>
-<body>
-
-<div id="main-box">
-  <h1>電卓</h1>
-  <div id="view-box">
-    <input id="view" type="text" name="" value="0">
-  </div>
-  <div id="button-box">
-    <div>
-      <button>(</button>
-      <button>)</button>
-      <button>%</button>
-      <button id="ac">AC</button>
-    </div>
-
-    <div>
-      <button id="seven" value="7">7</button>
-      <button id="eight" value="8">8</button>
-      <button id="nine" value="9">9</button>
-      <button id="div">÷</button>
-    </div>
-    <div>
-      <button id="four" value="4">4</button>
-      <button id="five" value="5">5</button>
-      <button id="six" value="6">6</button>
-      <button id="mult">×</button>
-    </div>
-    <div>
-      <button id="one" value="1">1</button>
-      <button id="two" value="2">2</button>
-      <button id="three" value="3">3</button>
-      <button id="minus">-</button>
-    </div>
-    <div>
-      <button id="zero">0</button>
-      <button>.</button>
-      <button>=</button>
-      <button id="plus">+</button>
-    </div>
-  </div>
-</div>
-
-<div id="slide-box">
-
-</div>
-
+  <!-- css -->
+  <link href="css/style.css" rel="stylesheet">
   <!-- BootstrapのCSS読み込み -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <!-- jQuery読み込み -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
   <!-- BootstrapのJS読み込み -->
   <script src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+  <div id="main-box">
+    <div id="sub-box">
+      <h1>電卓</h1>
+      <div id="view-box">
+        <form action="" class="form-group">
+          <input id="view" type="text" class="form-control" name="" value="0">
+        </form>
+      </div>
+      <div id="button-box">
+        <p>
+          <button type="button" class="btn btn-primary">(</button>
+          <button type="button" class="btn btn-primary">)</button>
+          <button type="button" class="btn btn-primary">%</button>
+          <button type="button" class="btn btn-primary" id="ac">AC</button>
+        </p>
+
+        <p>
+          <button type="button" class="btn btn-primary" id="seven" value="7">7</button>
+          <button type="button" class="btn btn-primary" id="eight" value="8">8</button>
+          <button type="button" class="btn btn-primary" id="nine" value="9">9</button>
+          <button type="button" class="btn btn-primary" id="div">÷</button>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary" id="four" value="4">4</button>
+          <button type="button" class="btn btn-primary" id="five" value="5">5</button>
+          <button type="button" class="btn btn-primary" id="six" value="6">6</button>
+          <button type="button" class="btn btn-primary" id="mult">×</button>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary" id="one" value="1">1</button>
+          <button type="button" class="btn btn-primary" id="two" value="2">2</button>
+          <button type="button" class="btn btn-primary" id="three" value="3">3</button>
+          <button type="button" class="btn btn-primary" id="minus">-</button>
+        </p>
+        <p>
+          <button type="button" class="btn btn-primary" id="zero">0</button>
+          <button type="button" class="btn btn-primary">.</button>
+          <button type="button" class="btn btn-primary">=</button>
+          <button type="button" class="btn btn-primary" id="plus">+</button>
+        </p>
+      </div>
+    </div>
+
+    <!-- スライドショー -->
+    <div id="slide-box">
+
+    </div>
+  </div>
+
+  <!-- js -->
   <script src="js/main.js" charset="utf-8"></script>
+
 </body>
+
 </html>

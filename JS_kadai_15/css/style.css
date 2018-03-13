@@ -1,4 +1,38 @@
 @chaarset "utf-8";
 
+h1{
+  text-align: center;
+}
+
+p{
+  width: 250px;
+  height: 40px;
+}
 #main-box{
+  display: flex;
+  justify-content: center;
+}
+
+#sub-box{
+  width: 250px;
+  height: 400px;
+  background-color: #fafafa;
+  border: solid 1px #cccccc;
+}
+
+#view-box{
+  text-align: center;
+}
+
+#view{
+  text-align: right;
+}
+
+#button-box{
+  text-align: center;
+}
+
+.btn{
+  width: 40px;
+  height: 40px;
 }
