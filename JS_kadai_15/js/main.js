@@ -1,373 +1,111 @@
 $(document).ready(function(){
+
   // 0:operator,1:number
   var num_flag=0;
   localStorage.setItem("num_flag",num_flag);
-  // 0:nan,1:+,2:-,3:×,4:÷
+  // 0:nan,1:+,2:-,3:×,4:÷,5:X!,6:log,7:ac
   var ope=0;
   localStorage.setItem("ope",ope);
 
-  // 1
-  $('#one').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    // console.log(localStorage);
-    var ope=localStorage.getItem("ope");
-    // console.log(ope);
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#one").val());
+  // button
+  $('.btn').on('click',function(e){
+    num_flag=localStorage.getItem("num_flag");
+    ope=localStorage.getItem("ope");
+
+    var num = parseInt($(this).val());
+    // console.log("num type");
     // console.log($.type(num));
 
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
+    // flag
+    if($.isNumeric(num)){
+      // number
+      num_flag=1;
+    }else{
+      // operator
+      num_flag=0;
+
+      if($(this).val()=="plus"){
+        ope=1;
+      }else if ($(this).val()=="minus") {
+        ope=2;
+      }else if ($(this).val()=="mult") {
+        ope=3;
+      }else if ($(this).val()=="div") {
+        ope=4;
+      }else if ($(this).val()=="fact") {
+        ope=5;
+      }else if ($(this).val()=="log") {
+        ope=6;
+      }else if ($(this).val()=="ac") {
+        ope=7;
       }else{
         console.log("operation error");
       }
-    }else{
-      console.log("flag error");
     }
 
-    //output
-    $('#view').val(view+'');
-    console.log(view);
-  });
-
-  // 2
-  $('#two').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#two").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 3
-  $('#three').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#three").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view =view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 4
-  $('#four').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#four").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 5
-  $('#five').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#five").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 6
-  $('#six').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#six").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 7
-  $('#seven').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#seven").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 8
-  $('#eight').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#eight").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // 9
-  $('#nine').on('click',function(e){
-    // flag
-    num_flag=1;
-    localStorage.setItem("num_flag",num_flag);
-    var ope=localStorage.getItem("ope");
-
-    var view = parseInt($("#view").val());
-    var num = parseInt($("#nine").val());
-
-    if(view==0){
-      // default
-      view=num;
-    }else if (ope==0 && num_flag==1) {
-      view=view*10+num;
-    }else if (ope!=0 && num_flag==1){
-      if(ope==1){
-        view=view+num;
-      }else if (ope==2){
-        view=view-num;
-      }else if (ope==3){
-        view=view*num;
-      }else if (ope==4){
-        view=view/num;
-      }else{
-        console.log("operation error");
-      }
-    }else{
-      console.log("flag error");
-    }
-
-    //output
-    $('#view').val(view+'');
-  });
-
-  // plus
-  $('#plus').on('click',function(e){
-    // flag
-    ope=1;
-
-    localStorage.setItem("ope",ope);
+    // console.log("num_flag");
+    // console.log(num_flag);
+    // console.log("ope");
     // console.log(ope);
-  });
 
-  // minus
-  $('#minus').on('click',function(e){
-    // flag
-    ope=2;
+    var view = parseInt($("#view").val());
 
+    if(view==0){
+      // default
+      view=num;
+    }else if (ope==0 && num_flag==1) {
+      view=view*10+num;
+    }else if (ope!=0 && num_flag==1){
+      if(ope==1){
+        view+=num;
+        ope=0;
+      }else if (ope==2){
+        view-=num;
+        ope=0;
+      }else if (ope==3){
+        view*=num;
+        ope=0;
+      }else if (ope==4){
+        view/=num;
+        ope=0;
+      }else{
+        console.log("operation error");
+      }
+    }else if (ope!=0 && num_flag==0) {
+      if (ope==5) {
+        if(view<1){
+          alert("１以上の数字を入力して下さい。");
+          return;
+        }else{
+          for(var i = view - 1; i > 0; i--){
+            view*=i;
+          }
+        }
+        ope=0;
+      }else if (ope==6) {
+        view=Math.log(view);
+        ope=0;
+      }else if (ope==7) {
+        num_flag=0;
+        ope=0;
+        view=0;
+
+        localStorage.clear();
+      }else{
+        console.log("ope error");
+      }
+    }else{
+      console.log("flag error");
+    }
+
+    localStorage.setItem("num_flag",num_flag);
     localStorage.setItem("ope",ope);
-  });
-
-  // mult
-  $('#mult').on('click',function(e){
-    // flag
-    ope=3;
-
-    localStorage.setItem("ope",ope);
-  });
-
-  // div
-  $('#div').on('click',function(e){
-    // flag
-    ope=4;
-
-    localStorage.setItem("ope",ope);
-  });
-
-  // ac
-  $('#ac').on('click',function(e){
-    // flag
-    num_flag=0;
-    ope=0;
-
-    localStorage.clear();
+    console.log(localStorage);
 
     //output
-    $('#view').val('0');
-
+    $('#view').val(view+'');
+    // console.log("view");
+    // console.log(view);
   });
 
 });
